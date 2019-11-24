@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Change"
-git push heroku master
+git commit -m "B1 B2"
+git push -u origin master
