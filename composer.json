@@ -1,0 +1,8 @@
+{
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*"
+  },
+  "require": {
+    "google/cloud-speech": "^0.18.2"
+  }
+}

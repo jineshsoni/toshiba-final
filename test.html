@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+<title>Taphold Event</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<script>
+$(document).on("pagecreate","#page1",function(){
+  $("p").on("taphold",function(){
+    $(this).hide();
+  });
+});
+</script>
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header">
+    <h2>Header</h2>
+  </div>
+
+  <div data-role="main" class="ui-content">
+      <p>This line will disappear, if you tap on it.</p>
+  </div>
+  
+  <div>
+	<input type="button" id="testBtn" value="Click me to hear voice" onclick="testSpeech('Hello welcome to my website')" />
+  </div>
+
+   <div>
+	<input type="button" id="testBtn" value="Click me to hear voice" onclick="clikme();" />
+  </div>
+
+   <div>
+	<input type="button" id="testBtn" value="Click me to hear voice" onclick="testSpeech2('Hello welcome to my website')" />
+  </div>
+
+   <div>
+	<input type="button" id="testBtn" value="Click me to hear voice" onclick="testSpeech3('Hello welcome to my website')" />
+  </div>
+   <div>
+	<input type="button" id="testBtn" value="Click me to hear voice" onclick="testSpeech4('Hello welcome to my website')" />
+  </div>
+
+  <div data-role="footer">
+      <h2>Footer</h2>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+	function clikme() {responsiveVoice.speak("Hello Welcome to toshiba","UK English Male");}; 
+</script>
+<script>
+	function testSpeech(speech){
+		msg = new SpeechSynthesisUtterance(speech);
+		var voices=[];
+		var timer1 = setTimeout(function() {
+			voices = speechSynthesis.getVoices();
+			console.log(voices);
+			if (voices.length !== 0) {
+				msg = new SpeechSynthesisUtterance();
+				msg.voice = voices[0];
+				speechSynthesis.speak(msg);
+				msg.lang = 'en-US';
+				clearTimeout(timer1);
+			}
+		}, 200);
+		//timer.start();
+		msg.voice=voices[0];
+		speechSynthesis.speak(msg);
+	}
+</script>
+
+
+<script>
+	function testSpeech1(speech){
+		msg = new SpeechSynthesisUtterance(speech);
+		var voices=[];
+		var timer1 = setTimeout(function() {
+			voices = speechSynthesis.getVoices();
+			console.log(voices);
+			if (voices.length !== 0) {
+				msg = new SpeechSynthesisUtterance();
+				msg.voice = voices[1];
+				speechSynthesis.speak(msg);
+				msg.lang = 'en-US';
+				clearTimeout(timer1);
+			}
+		}, 200);
+		//timer.start();
+		msg.voice=voices[1];
+		speechSynthesis.speak(msg);
+	}
+</script>
+
+
+<script>
+	function testSpeech2(speech){
+		msg = new SpeechSynthesisUtterance(speech);
+		var voices=[];
+		var timer1 = setTimeout(function() {
+			voices = speechSynthesis.getVoices();
+			console.log(voices);
+			if (voices.length !== 0) {
+				msg = new SpeechSynthesisUtterance();
+				msg.voice = voices[2];
+				speechSynthesis.speak(msg);
+				msg.lang = 'en-US';
+				clearTimeout(timer1);
+			}
+		}, 200);
+		//timer.start();
+		msg.voice=voices[2];
+		speechSynthesis.speak(msg);
+	}
+</script>
+
+
+<script>
+	function testSpeech3(speech){
+		msg = new SpeechSynthesisUtterance(speech);
+		var voices=[];
+		var timer1 = setTimeout(function() {
+			voices = speechSynthesis.getVoices();
+			console.log(voices);
+			if (voices.length !== 0) {
+				msg = new SpeechSynthesisUtterance();
+				msg.voice = voices[3];
+				speechSynthesis.speak(msg);
+				msg.lang = 'en-US';
+				clearTimeout(timer1);
+			}
+		}, 200);
+		//timer.start();
+		msg.voice=voices[3];
+		speechSynthesis.speak(msg);
+	}
+</script>
+
+<script>
+	function testSpeech4(speech){
+		msg = new SpeechSynthesisUtterance(speech);
+		var voices=[];
+		var timer1 = setTimeout(function() {
+			voices = speechSynthesis.getVoices();
+			console.log(voices);
+			if (voices.length !== 0) {
+				msg = new SpeechSynthesisUtterance();
+				msg.voice = voices[4];
+				speechSynthesis.speak(msg);
+				msg.lang = 'en-US';
+				clearTimeout(timer1);
+			}
+		}, 200);
+		//timer.start();
+		msg.voice=voices[4];
+		speechSynthesis.speak(msg);
+	}
+</script>
+</html>
