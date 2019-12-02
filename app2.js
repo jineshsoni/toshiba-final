@@ -1,4 +1,4 @@
-const speechPitch = 1.2;
+const speechPitch = 1.0;
 const speechRate = 1.0;
 const apiClient = new ApiAi.ApiAiClient({accessToken: '6b07a0d9841143c7b923a43449624bd9'});
 var msg = new SpeechSynthesisUtterance('Hi, Welcome to Toshiba. How may I help you?  Are you looking for mobile devices, memory devices or hard drives?');
@@ -70,8 +70,8 @@ function handleResponse(serverResponse) {
   const speech = serverResponse["result"]["fulfillment"]["speech"];
   msg = new SpeechSynthesisUtterance(speech);
   msg.voice = speechSynthesis.getVoices()[1];
-  //msg.voiceURI =  "Microsoft David Desktop - English (United States)";
-  //msg.name =  "Microsoft David Desktop - English (United States)";
+  msg.voiceURI =  "Microsoft David Desktop - English (United States)";
+  msg.name =  "Microsoft David Desktop - English (United States)";
   msg.lang='en-US';
   msg.rate = speechRate; 		// 0.1 to 1
   msg.pitch = speechPitch;
